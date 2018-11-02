@@ -2,42 +2,40 @@
 <html>
 
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
-  <script src="javascripts/app.js"></script>
-  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-  <meta charset="utf-8">
-  <title>Node api tutorial</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="javascripts/app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <meta charset="utf-8">
+    <title>Push Notification Backend</title>
 </head>
 
 <body>
-
   <div id='app' ng-app='app' ng-controller='mainCtrl'>
-
-    <div ng-if='user'>
-        <p>{{user.name}}</p>
-        <p>{{user.token}}</p>
-    </div>
-
-    <!-- <h1>Send a new Push</h1>
-    <form id="newMessage" ng-submit="sendMessage()">
-      Message: <input type="text" ng-model="message" value="">
-      <input type="submit" value="Submit">
-    </form> -->
-
-    <div ng-if='!machines.length' class=''>
-      <h1 class='h1'>
-        No machines yet
-      </h1>
-    </div>
-
-    <ul ng-if='machines.length'>
-      <li ng-repeat='m in machines'>
-        {{m.name}}
-      </li>
-    </ul>
-
-    
-
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                Push Notification Backend
+            </a>
+        </nav>
+       <div class="container">
+            <div ng-if='user'>
+                <p>{{user.name}}</p>
+                <p>{{user.token}}</p>
+            </div>
+            
+            
+            <div ng-if='!machines.length' class=''>
+                <h1 class='h1'>
+                No machines yet
+                </h1>
+            </div>
+            
+            <ul ng-if='machines.length'>
+                <li ng-repeat='m in machines'>
+                {{m}}
+                </li>
+            </ul>
+       </div>
   </div>
 
 </body>
