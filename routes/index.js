@@ -5,12 +5,11 @@ var router = express.Router();
 // let expo = new Expo();
 
 var machines = [{
-    user: 'Tyler',
-    token: 'askfjhaksldjhfalksjdhfadf',
-    time: '',
-    message: ''
-  },
-];
+  user: 'Tyler',
+  token: 'askfjhaksldjhfalksjdhfadf',
+  time: '',
+  message: ''
+}, ];
 
 var user = {
   token: '123456',
@@ -28,7 +27,7 @@ router.get('/machines', function(req, res) {
 });
 
 router.post('/machines', function(req, res) {
-  machine = req.body.machine
+  var machine = req.body.machine
   machines.push(machine);
   // sendMessage(user.pushToken, req.body.body)
   res.end('{"success" : "Sent Successfully", "status" : 200}');
@@ -38,7 +37,7 @@ router.get('/user', function(req, res) {
   res.send(user);
 });
 
-router.post('/user', function(req,res){
+router.post('/user', function(req, res) {
   user.token = req.body.token.value;
   user.name = req.body.user.name;
   user.id = req.body.user.userId;
