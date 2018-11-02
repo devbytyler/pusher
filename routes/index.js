@@ -34,6 +34,8 @@ router.get('/user', function(req, res) {
 router.post('/user', function(req,res){
   console.log("A new user");
   user = req.body
+  console.log(user)
+  res.end('{"success" : "Updated Successfully", "status" : 200}');
 })
 
 module.exports = router;
