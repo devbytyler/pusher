@@ -1,11 +1,11 @@
 var app = window.angular.module('app', [])
 
-app.factory('pushFetcher', pushFetcher)
+app.factory('machineFetcher', machineFetcher)
 app.factory('userFetcher', userFetcher)
 app.controller('mainCtrl', mainCtrl)
 
-function pushFetcher($http) {
-  var API_ROOT = 'queue'
+function machineFetcher($http) {
+  var API_ROOT = 'machines'
   return {
     get: function() {
       return $http
@@ -15,7 +15,6 @@ function pushFetcher($http) {
         })
     }
   }
-
 }
 
 function userFetcher($http) {
@@ -31,14 +30,14 @@ function userFetcher($http) {
     }
 }
 
-function mainCtrl($scope, pushFetcher, userFetcher, $http) {
+function mainCtrl($scope, machineFetcher, userFetcher, $http) {
 
     $scope.user = null
-    $scope.pushs = []
+    $scope.machines = []
 
-    pushFetcher.get()
+    machineFetcher.get()
         .then(function(data) {
-            $scope.pushs = data
+            $scope.machines = data
         })
 
     userFetcher.get()
@@ -46,17 +45,17 @@ function mainCtrl($scope, pushFetcher, userFetcher, $http) {
             $scope.user = data
         })
 
-    $scope.sendMessage = function() {
-        var formData = { message: $scope.message};
-        var pushUrl = 'messages';
-        $http({
-            url: pushUrl,
-            method: "POST",
-            data: formData
-        }).success(function(data, status, headers, config) {
-            console.log("Send worked");
-        }).error(function(data, status, headers, config) {
-            console.log("Send failed");
-        });
-    }
+    // $scope.sendMessage = function() {
+    //     var formData = { message: $scope.message};
+    //     var pushUrl = 'messages';
+    //     $http({
+    //         url: pushUrl,
+    //         method: "POST",
+    //         data: formData
+    //     }).success(function(data, status, headers, config) {
+    //         console.log("Send worked");
+    //     }).error(function(data, status, headers, config) {
+    //         console.log("Send failed");
+    //     });
+    // }
 }

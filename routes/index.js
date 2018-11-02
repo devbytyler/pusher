@@ -24,14 +24,11 @@ router.get('/', function(req, res) {
 });
 
 router.get('/machines', function(req, res) {
-  res.send(messages);
+  res.send(machines);
 });
 
 router.post('/machines', function(req, res) {
-  machine = {}
-  console.log(req.body)
-  // machine.name = req.body.name
-  // machine.timeleft = req.body.timeleft
+  machine = req.body.machine
   machines.push(machine);
   // sendMessage(user.pushToken, req.body.body)
   res.end('{"success" : "Sent Successfully", "status" : 200}');

@@ -18,24 +18,23 @@
         <p>{{user.token}}</p>
     </div>
 
-    <h1>Send a new Push</h1>
+    <!-- <h1>Send a new Push</h1>
     <form id="newMessage" ng-submit="sendMessage()">
       Message: <input type="text" ng-model="message" value="">
       <input type="submit" value="Submit">
-    </form>
-<!-- 
-    <div ng-if='!pushs.length' class='no-pokemon center stretch'>
+    </form> -->
+
+    <div ng-if='!machines.length' class=''>
       <h1 class='h1'>
-        Set up your endpoint at `/pokemon` to get this view working
+        No machines yet
       </h1>
     </div>
 
-    <ul ng-if='pushs.length' class='list center stretch'>
-      <li ng-repeat='p in pushs' class='pokemon'>
-        A user
-
+    <ul ng-if='machines.length'>
+      <li ng-repeat='m in machines'>
+        {{m.name}}
       </li>
-    </ul> -->
+    </ul>
 
     
 
