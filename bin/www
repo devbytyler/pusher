@@ -50,6 +50,7 @@ function normalizePort(val) {
 }
 
 function poll(){
+  return
   setInterval(()=>{
     console.log("Polling the notifications")
   }, 10000)

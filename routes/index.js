@@ -9,9 +9,11 @@ var queue = [{
   },
 ];
 
+var user = null;
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', function(req, res) {
+  res.sendFile('index.html', { root: 'public' });
 });
 
 router.get('/queue', function(req, res) {
@@ -24,5 +26,14 @@ router.post('/queue', function(req, res) {
   queue.push(req.body);
   res.end('{"success" : "Updated Successfully", "status" : 200}');
 });
+
+router.get('/user', function(req, res) {
+  res.send(user);
+});
+
+router.post('/user', function(req,res){
+  console.log("A new user");
+  user = req.body
+})
 
 module.exports = router;
