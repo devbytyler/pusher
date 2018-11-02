@@ -46,18 +46,17 @@ function mainCtrl($scope, pushFetcher, userFetcher, $http) {
             $scope.user = data
         })
 
-    $scope.addPush = function() {
-        var formData = { name: $scope.Name, avatarUrl: $scope.Url };
-        console.log(formData);
-        var pushUrl = 'queue';
+    $scope.sendMessage = function() {
+        var formData = { message: $scope.message};
+        var pushUrl = 'messages';
         $http({
-        url: pushUrl,
-        method: "POST",
-        data: formData
+            url: pushUrl,
+            method: "POST",
+            data: formData
         }).success(function(data, status, headers, config) {
-        console.log("Post worked");
+            console.log("Send worked");
         }).error(function(data, status, headers, config) {
-        console.log("Post failed");
+            console.log("Send failed");
         });
     }
 }
