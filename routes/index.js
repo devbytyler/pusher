@@ -4,18 +4,8 @@ var router = express.Router();
 
 // let expo = new Expo();
 
-var machines = [{
-  user: 'Tyler',
-  token: 'askfjhaksldjhfalksjdhfadf',
-  time: '',
-  message: ''
-}, ];
-
-var user = {
-  token: '123456',
-  name: 'Tyler',
-  id: '654321'
-};
+var machines = [ ];
+var user = {};
 
 /* GET home page. */
 router.get('/', function(req, res) {

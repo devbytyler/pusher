@@ -19,7 +19,7 @@
         </nav>
        <div class="container">
             <div class="row mt-5">
-                <div class="col-6">
+                <div class="col-4">
                     <div class="card section">
                         <div class="card-header">
                             <h2>Registered User</h2>
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-8">
                     <div class="card section">
                         <div class="card-header">
                             <h2>Scheduled Machines</h2>
@@ -45,14 +45,13 @@
                                 </h1>
                             </div>
                             <div ng-if='machines.length'>
-                                <div class="card machine my-2" ng-repeat='m in machines'>
+                                <div class="card machine my-3" ng-repeat='m in machines'>
                                     <div class="card-header">{{m.name}}</div>
                                     <div class="card-body">
-                                        <div>Machine ID: {{m.id}}</div>
-                                        <div>Finish Time: {{m.finishTime}}</div>
-                                        <div>User ID: {{m.userId}}</div>
-                                        <div>Type: {{m.type}}</div>
-                                        {{m}}
+                                        <p>Machine ID: {{m.id}}</p>
+                                        <p>Finish Time: {{m.finishTime}}</p>
+                                        <p>User ID: {{m.userId}}</p>
+                                        <p>Type: {{m.type}}</p>
                                     </div>
                                 </div>
                             </div>
